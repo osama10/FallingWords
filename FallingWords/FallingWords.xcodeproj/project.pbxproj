@@ -14,6 +14,7 @@
 		03705BB224E8373900683E2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03705BB124E8373900683E2F /* Assets.xcassets */; };
 		03705BB524E8373900683E2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03705BB324E8373900683E2F /* LaunchScreen.storyboard */; };
 		03705BC024E8373A00683E2F /* FallingWordsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BBF24E8373A00683E2F /* FallingWordsTests.swift */; };
+		03705BD324E8583D00683E2F /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = 03705BD224E8583D00683E2F /* words.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		03705BBB24E8373A00683E2F /* FallingWordsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FallingWordsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03705BBF24E8373A00683E2F /* FallingWordsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallingWordsTests.swift; sourceTree = "<group>"; };
 		03705BC124E8373A00683E2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03705BD224E8583D00683E2F /* words.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 		03705BCE24E83F4200683E2F /* SupportResources */ = {
 			isa = PBXGroup;
 			children = (
+				03705BD224E8583D00683E2F /* words.json */,
 				03705BB624E8373900683E2F /* Info.plist */,
 				03705BB124E8373900683E2F /* Assets.xcassets */,
 			);
@@ -237,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03705BB524E8373900683E2F /* LaunchScreen.storyboard in Resources */,
+				03705BD324E8583D00683E2F /* words.json in Resources */,
 				03705BB224E8373900683E2F /* Assets.xcassets in Resources */,
 				03705BB024E8373600683E2F /* Main.storyboard in Resources */,
 			);
