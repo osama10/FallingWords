@@ -10,16 +10,17 @@ import Foundation
 
 protocol GamePlayUseCaseProtocol {
     func getWord() -> GameData
-    func check(userChoice: String) -> Bool // TODO : Should be a completion
+    func check(userChoice: String, result: @escaping (Bool) -> Void)
     func getScore() -> String
 }
 
 final class GamePlayUseCase: GamePlayUseCaseProtocol {
+  
    
     func getWord() -> GameData { GameData(word: "primary school", options: ["asdasd", "asdasd","escuela primaria","adssad"]) }
     
-    func check(userChoice: String) -> Bool { Bool.random() }
-    
+    func check(userChoice: String, result: @escaping (Bool) -> Void) { result(Bool.random()) }
+      
     func getScore() -> String { "20" }
     
 }
