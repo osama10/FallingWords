@@ -79,13 +79,11 @@
 		03705BA724E8373600683E2F /* FallingWords */ = {
 			isa = PBXGroup;
 			children = (
-				03705BA824E8373600683E2F /* AppDelegate.swift */,
-				03705BAA24E8373600683E2F /* SceneDelegate.swift */,
-				03705BAC24E8373600683E2F /* ViewController.swift */,
-				03705BAE24E8373600683E2F /* Main.storyboard */,
-				03705BB124E8373900683E2F /* Assets.xcassets */,
-				03705BB324E8373900683E2F /* LaunchScreen.storyboard */,
-				03705BB624E8373900683E2F /* Info.plist */,
+				03705BD124E83FCD00683E2F /* AppStartup */,
+				03705BCF24E83F6200683E2F /* Scenes */,
+				03705BCB24E83EF900683E2F /* Data */,
+				03705BCA24E83B4900683E2F /* Domain */,
+				03705BCE24E83F4200683E2F /* SupportResources */,
 			);
 			path = FallingWords;
 			sourceTree = "<group>";
@@ -97,6 +95,64 @@
 				03705BC124E8373A00683E2F /* Info.plist */,
 			);
 			path = FallingWordsTests;
+			sourceTree = "<group>";
+		};
+		03705BCA24E83B4900683E2F /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		03705BCB24E83EF900683E2F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		03705BCC24E83F0B00683E2F /* MainMenu */ = {
+			isa = PBXGroup;
+			children = (
+				03705BAC24E8373600683E2F /* ViewController.swift */,
+			);
+			path = MainMenu;
+			sourceTree = "<group>";
+		};
+		03705BCD24E83F1D00683E2F /* GameScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GameScreen;
+			sourceTree = "<group>";
+		};
+		03705BCE24E83F4200683E2F /* SupportResources */ = {
+			isa = PBXGroup;
+			children = (
+				03705BB624E8373900683E2F /* Info.plist */,
+				03705BB124E8373900683E2F /* Assets.xcassets */,
+			);
+			path = SupportResources;
+			sourceTree = "<group>";
+		};
+		03705BCF24E83F6200683E2F /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				03705BB324E8373900683E2F /* LaunchScreen.storyboard */,
+				03705BAE24E8373600683E2F /* Main.storyboard */,
+				03705BCC24E83F0B00683E2F /* MainMenu */,
+				03705BCD24E83F1D00683E2F /* GameScreen */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		03705BD124E83FCD00683E2F /* AppStartup */ = {
+			isa = PBXGroup;
+			children = (
+				03705BA824E8373600683E2F /* AppDelegate.swift */,
+				03705BAA24E8373600683E2F /* SceneDelegate.swift */,
+			);
+			path = AppStartup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,7 +419,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = FallingWords/Info.plist;
+				INFOPLIST_FILE = FallingWords/SupportResources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -380,7 +436,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = FallingWords/Info.plist;
+				INFOPLIST_FILE = FallingWords/SupportResources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
