@@ -167,9 +167,11 @@
                     </view>
                     <connections>
                         <outlet property="resultLabel" destination="sIR-Vv-fQ5" id="mKa-11-PVC"/>
+                        <outlet property="rightAnswerButton" destination="wjW-uh-MD4" id="IYs-RB-xZQ"/>
                         <outlet property="timerLabel" destination="5M7-I6-qKg" id="wUf-mg-Wji"/>
                         <outlet property="wordLabel" destination="k9I-4I-d7X" id="QB9-yh-YXo"/>
                         <outlet property="wordTitleLabel" destination="IGr-Ai-x72" id="kru-7q-Rgn"/>
+                        <outlet property="wrongAnswerButton" destination="Csf-Jb-wvZ" id="m0z-WW-3lf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="syP-Zp-aev" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

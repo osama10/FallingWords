@@ -27,6 +27,9 @@
 		03705BF324E9AC9300683E2F /* GameScreenNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BF224E9AC9300683E2F /* GameScreenNavigator.swift */; };
 		03705BF524E9AE4100683E2F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BF424E9AE4100683E2F /* Constants.swift */; };
 		03705BF824E9B04900683E2F /* GameScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BF724E9B04900683E2F /* GameScreenViewModel.swift */; };
+		03705BFA24E9C84D00683E2F /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BF924E9C84D00683E2F /* UIFont+Extension.swift */; };
+		03705BFC24E9CB1B00683E2F /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BFB24E9CB1B00683E2F /* UILabel+Extension.swift */; };
+		03705BFE24E9E15C00683E2F /* UserChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BFD24E9E15C00683E2F /* UserChoice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,9 @@
 		03705BF224E9AC9300683E2F /* GameScreenNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenNavigator.swift; sourceTree = "<group>"; };
 		03705BF424E9AE4100683E2F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		03705BF724E9B04900683E2F /* GameScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenViewModel.swift; sourceTree = "<group>"; };
+		03705BF924E9C84D00683E2F /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		03705BFB24E9CB1B00683E2F /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		03705BFD24E9E15C00683E2F /* UserChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserChoice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +198,7 @@
 			children = (
 				03705BD524E85AAC00683E2F /* Word.swift */,
 				03705BD724E85D5F00683E2F /* GameData.swift */,
+				03705BFD24E9E15C00683E2F /* UserChoice.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -246,6 +253,8 @@
 			children = (
 				03705BE324E8672C00683E2F /* Storyboard+Extensions.swift */,
 				03705BEF24E883F400683E2F /* NotificationName+Extension.swift */,
+				03705BF924E9C84D00683E2F /* UIFont+Extension.swift */,
+				03705BFB24E9CB1B00683E2F /* UILabel+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -392,6 +401,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03705BFC24E9CB1B00683E2F /* UILabel+Extension.swift in Sources */,
 				03705BAD24E8373600683E2F /* MainMenuViewController.swift in Sources */,
 				03705BDF24E8667000683E2F /* AppNavigator.swift in Sources */,
 				03705BF024E883F400683E2F /* NotificationName+Extension.swift in Sources */,
@@ -402,10 +412,12 @@
 				03705BD824E85D5F00683E2F /* GameData.swift in Sources */,
 				03705BF324E9AC9300683E2F /* GameScreenNavigator.swift in Sources */,
 				03705BD624E85AAC00683E2F /* Word.swift in Sources */,
+				03705BFE24E9E15C00683E2F /* UserChoice.swift in Sources */,
 				03705BDC24E85DD000683E2F /* GamePlayUseCase.swift in Sources */,
 				03705BE824E8758E00683E2F /* GameScreenViewController.swift in Sources */,
 				03705BF524E9AE4100683E2F /* Constants.swift in Sources */,
 				03705BA924E8373600683E2F /* AppDelegate.swift in Sources */,
+				03705BFA24E9C84D00683E2F /* UIFont+Extension.swift in Sources */,
 				03705BAB24E8373600683E2F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
