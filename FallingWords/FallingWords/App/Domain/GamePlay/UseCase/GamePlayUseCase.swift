@@ -16,8 +16,7 @@ protocol GamePlayUseCaseProtocol {
 
 final class GamePlayUseCase: GamePlayUseCaseProtocol {
   
-   
-    func getWord() -> GameData { GameData(word: "primary school", options: ["asdasd", "asdasd","escuela primaria","adssad"]) }
+   func getWord() -> GameData { GameData(word: "primary school", options: ["asdasd", "asdasd","escuela primaria","adssad"]) }
     
     func check(userChoice: String, result: @escaping (Bool) -> Void) { result(Bool.random()) }
       

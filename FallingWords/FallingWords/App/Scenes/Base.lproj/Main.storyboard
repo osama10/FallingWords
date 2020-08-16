@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main Menu View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FallingWords" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainMenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MainMenuViewController" customModule="FallingWords" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,12 +34,12 @@
                                     <constraint firstAttribute="width" constant="200" id="Odc-Dw-LIL"/>
                                     <constraint firstAttribute="width" secondItem="fd6-aM-T5R" secondAttribute="height" multiplier="3:1" id="fTY-qU-OGl"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
                                 <state key="normal" title="Play">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="lby-gv-Jpf" kind="presentation" modalPresentationStyle="fullScreen" id="1l7-ng-fRk"/>
+                                    <action selector="didTapOnPlay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hmr-v7-XcR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -58,15 +58,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="playButton" destination="fd6-aM-T5R" id="QOw-Kc-5Wd"/>
+                        <outlet property="scoreLabel" destination="vY2-aN-OUt" id="0if-Qp-Gvt"/>
+                        <outlet property="titleLabel" destination="w4z-op-x0X" id="spO-Ie-FEe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-403" y="40"/>
         </scene>
-        <!--View Controller-->
+        <!--Game Screen View Controller-->
         <scene sceneID="33y-hD-vpy">
             <objects>
-                <viewController id="lby-gv-Jpf" sceneMemberID="viewController">
+                <viewController id="lby-gv-Jpf" customClass="GameScreenViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ahH-mV-stg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

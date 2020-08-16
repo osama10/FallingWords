@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		03705BA924E8373600683E2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BA824E8373600683E2F /* AppDelegate.swift */; };
 		03705BAB24E8373600683E2F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BAA24E8373600683E2F /* SceneDelegate.swift */; };
-		03705BAD24E8373600683E2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BAC24E8373600683E2F /* ViewController.swift */; };
+		03705BAD24E8373600683E2F /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BAC24E8373600683E2F /* MainMenuViewController.swift */; };
 		03705BB024E8373600683E2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03705BAE24E8373600683E2F /* Main.storyboard */; };
 		03705BB224E8373900683E2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03705BB124E8373900683E2F /* Assets.xcassets */; };
 		03705BB524E8373900683E2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03705BB324E8373900683E2F /* LaunchScreen.storyboard */; };
@@ -18,6 +18,12 @@
 		03705BD624E85AAC00683E2F /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BD524E85AAC00683E2F /* Word.swift */; };
 		03705BD824E85D5F00683E2F /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BD724E85D5F00683E2F /* GameData.swift */; };
 		03705BDC24E85DD000683E2F /* GamePlayUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BDB24E85DD000683E2F /* GamePlayUseCase.swift */; };
+		03705BDF24E8667000683E2F /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BDE24E8667000683E2F /* AppNavigator.swift */; };
+		03705BE424E8672C00683E2F /* Storyboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BE324E8672C00683E2F /* Storyboard+Extensions.swift */; };
+		03705BE824E8758E00683E2F /* GameScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BE724E8758E00683E2F /* GameScreenViewController.swift */; };
+		03705BEB24E875C200683E2F /* MainMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BEA24E875C200683E2F /* MainMenuViewModel.swift */; };
+		03705BEE24E8799100683E2F /* MainMenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BED24E8799100683E2F /* MainMenuCoordinator.swift */; };
+		03705BF024E883F400683E2F /* NotificationName+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BEF24E883F400683E2F /* NotificationName+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +40,7 @@
 		03705BA524E8373600683E2F /* FallingWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FallingWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03705BA824E8373600683E2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03705BAA24E8373600683E2F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		03705BAC24E8373600683E2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		03705BAC24E8373600683E2F /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		03705BAF24E8373600683E2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		03705BB124E8373900683E2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03705BB424E8373900683E2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -46,6 +52,12 @@
 		03705BD524E85AAC00683E2F /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		03705BD724E85D5F00683E2F /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		03705BDB24E85DD000683E2F /* GamePlayUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayUseCase.swift; sourceTree = "<group>"; };
+		03705BDE24E8667000683E2F /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigator.swift; sourceTree = "<group>"; };
+		03705BE324E8672C00683E2F /* Storyboard+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Extensions.swift"; sourceTree = "<group>"; };
+		03705BE724E8758E00683E2F /* GameScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenViewController.swift; sourceTree = "<group>"; };
+		03705BEA24E875C200683E2F /* MainMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewModel.swift; sourceTree = "<group>"; };
+		03705BED24E8799100683E2F /* MainMenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCoordinator.swift; sourceTree = "<group>"; };
+		03705BEF24E883F400683E2F /* NotificationName+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,10 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				03705BD124E83FCD00683E2F /* AppStartup */,
-				03705BCF24E83F6200683E2F /* Scenes */,
-				03705BCB24E83EF900683E2F /* Data */,
-				03705BCA24E83B4900683E2F /* Domain */,
-				03705BCE24E83F4200683E2F /* SupportResources */,
+				03705BE024E866E100683E2F /* App */,
+				03705BE124E866F700683E2F /* Commons */,
 			);
 			path = FallingWords;
 			sourceTree = "<group>";
@@ -123,7 +133,9 @@
 		03705BCC24E83F0B00683E2F /* MainMenu */ = {
 			isa = PBXGroup;
 			children = (
-				03705BAC24E8373600683E2F /* ViewController.swift */,
+				03705BEC24E8792A00683E2F /* Coordinator */,
+				03705BE924E875A200683E2F /* ViewModel */,
+				03705BDD24E8617000683E2F /* View */,
 			);
 			path = MainMenu;
 			sourceTree = "<group>";
@@ -131,6 +143,7 @@
 		03705BCD24E83F1D00683E2F /* GameScreen */ = {
 			isa = PBXGroup;
 			children = (
+				03705BE624E8756B00683E2F /* View */,
 			);
 			path = GameScreen;
 			sourceTree = "<group>";
@@ -161,6 +174,7 @@
 			children = (
 				03705BA824E8373600683E2F /* AppDelegate.swift */,
 				03705BAA24E8373600683E2F /* SceneDelegate.swift */,
+				03705BDE24E8667000683E2F /* AppNavigator.swift */,
 			);
 			path = AppStartup;
 			sourceTree = "<group>";
@@ -189,6 +203,66 @@
 				03705BD924E85D7C00683E2F /* UseCase */,
 			);
 			path = GamePlay;
+			sourceTree = "<group>";
+		};
+		03705BDD24E8617000683E2F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				03705BAC24E8373600683E2F /* MainMenuViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		03705BE024E866E100683E2F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				03705BCF24E83F6200683E2F /* Scenes */,
+				03705BCB24E83EF900683E2F /* Data */,
+				03705BCA24E83B4900683E2F /* Domain */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		03705BE124E866F700683E2F /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				03705BE224E8671B00683E2F /* Extensions */,
+				03705BCE24E83F4200683E2F /* SupportResources */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		03705BE224E8671B00683E2F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				03705BE324E8672C00683E2F /* Storyboard+Extensions.swift */,
+				03705BEF24E883F400683E2F /* NotificationName+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		03705BE624E8756B00683E2F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				03705BE724E8758E00683E2F /* GameScreenViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		03705BE924E875A200683E2F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				03705BEA24E875C200683E2F /* MainMenuViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		03705BEC24E8792A00683E2F /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				03705BED24E8799100683E2F /* MainMenuCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,10 +367,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03705BAD24E8373600683E2F /* ViewController.swift in Sources */,
+				03705BAD24E8373600683E2F /* MainMenuViewController.swift in Sources */,
+				03705BDF24E8667000683E2F /* AppNavigator.swift in Sources */,
+				03705BF024E883F400683E2F /* NotificationName+Extension.swift in Sources */,
+				03705BEE24E8799100683E2F /* MainMenuCoordinator.swift in Sources */,
+				03705BEB24E875C200683E2F /* MainMenuViewModel.swift in Sources */,
+				03705BE424E8672C00683E2F /* Storyboard+Extensions.swift in Sources */,
 				03705BD824E85D5F00683E2F /* GameData.swift in Sources */,
 				03705BD624E85AAC00683E2F /* Word.swift in Sources */,
 				03705BDC24E85DD000683E2F /* GamePlayUseCase.swift in Sources */,
+				03705BE824E8758E00683E2F /* GameScreenViewController.swift in Sources */,
 				03705BA924E8373600683E2F /* AppDelegate.swift in Sources */,
 				03705BAB24E8373600683E2F /* SceneDelegate.swift in Sources */,
 			);
@@ -459,7 +539,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = FallingWords/SupportResources/Info.plist;
+				INFOPLIST_FILE = FallingWords/Commons/SupportResources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -476,7 +556,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = FallingWords/SupportResources/Info.plist;
+				INFOPLIST_FILE = FallingWords/Commons/SupportResources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
