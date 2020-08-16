@@ -22,7 +22,7 @@
 		03705BE424E8672C00683E2F /* Storyboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BE324E8672C00683E2F /* Storyboard+Extensions.swift */; };
 		03705BE824E8758E00683E2F /* GameScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BE724E8758E00683E2F /* GameScreenViewController.swift */; };
 		03705BEB24E875C200683E2F /* MainMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BEA24E875C200683E2F /* MainMenuViewModel.swift */; };
-		03705BEE24E8799100683E2F /* MainMenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BED24E8799100683E2F /* MainMenuCoordinator.swift */; };
+		03705BEE24E8799100683E2F /* MainMenuNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BED24E8799100683E2F /* MainMenuNavigator.swift */; };
 		03705BF024E883F400683E2F /* NotificationName+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BEF24E883F400683E2F /* NotificationName+Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +56,7 @@
 		03705BE324E8672C00683E2F /* Storyboard+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Extensions.swift"; sourceTree = "<group>"; };
 		03705BE724E8758E00683E2F /* GameScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenViewController.swift; sourceTree = "<group>"; };
 		03705BEA24E875C200683E2F /* MainMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewModel.swift; sourceTree = "<group>"; };
-		03705BED24E8799100683E2F /* MainMenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCoordinator.swift; sourceTree = "<group>"; };
+		03705BED24E8799100683E2F /* MainMenuNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuNavigator.swift; sourceTree = "<group>"; };
 		03705BEF24E883F400683E2F /* NotificationName+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,7 +133,7 @@
 		03705BCC24E83F0B00683E2F /* MainMenu */ = {
 			isa = PBXGroup;
 			children = (
-				03705BEC24E8792A00683E2F /* Coordinator */,
+				03705BEC24E8792A00683E2F /* Navigator */,
 				03705BE924E875A200683E2F /* ViewModel */,
 				03705BDD24E8617000683E2F /* View */,
 			);
@@ -143,6 +143,7 @@
 		03705BCD24E83F1D00683E2F /* GameScreen */ = {
 			isa = PBXGroup;
 			children = (
+				03705BF124E9ABC700683E2F /* Navigator */,
 				03705BE624E8756B00683E2F /* View */,
 			);
 			path = GameScreen;
@@ -257,12 +258,19 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		03705BEC24E8792A00683E2F /* Coordinator */ = {
+		03705BEC24E8792A00683E2F /* Navigator */ = {
 			isa = PBXGroup;
 			children = (
-				03705BED24E8799100683E2F /* MainMenuCoordinator.swift */,
+				03705BED24E8799100683E2F /* MainMenuNavigator.swift */,
 			);
-			path = Coordinator;
+			path = Navigator;
+			sourceTree = "<group>";
+		};
+		03705BF124E9ABC700683E2F /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Navigator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,7 +378,7 @@
 				03705BAD24E8373600683E2F /* MainMenuViewController.swift in Sources */,
 				03705BDF24E8667000683E2F /* AppNavigator.swift in Sources */,
 				03705BF024E883F400683E2F /* NotificationName+Extension.swift in Sources */,
-				03705BEE24E8799100683E2F /* MainMenuCoordinator.swift in Sources */,
+				03705BEE24E8799100683E2F /* MainMenuNavigator.swift in Sources */,
 				03705BEB24E875C200683E2F /* MainMenuViewModel.swift in Sources */,
 				03705BE424E8672C00683E2F /* Storyboard+Extensions.swift in Sources */,
 				03705BD824E85D5F00683E2F /* GameData.swift in Sources */,

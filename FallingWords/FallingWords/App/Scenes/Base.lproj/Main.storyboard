@@ -71,7 +71,7 @@
         <!--Game Screen View Controller-->
         <scene sceneID="33y-hD-vpy">
             <objects>
-                <viewController id="lby-gv-Jpf" customClass="GameScreenViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameScreenViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lby-gv-Jpf" customClass="GameScreenViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ahH-mV-stg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

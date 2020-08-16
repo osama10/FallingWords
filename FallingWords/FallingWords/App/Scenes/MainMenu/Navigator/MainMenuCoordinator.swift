@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol MainMenuCoordinatorProtocol {
+protocol MainMenuNavigatorProtocol {
     func toGameScreen()
 }
 
-final class MainMenuCoordinator {
+final class MainMenuNavigator {
     private let viewController: UIViewController
     
     init(viewController: UIViewController) {
@@ -21,7 +21,7 @@ final class MainMenuCoordinator {
     
 }
 
-extension MainMenuCoordinator: MainMenuCoordinatorProtocol {
+extension MainMenuNavigator: MainMenuNavigatorProtocol {
     func toGameScreen() {
         print("I am called")
     }

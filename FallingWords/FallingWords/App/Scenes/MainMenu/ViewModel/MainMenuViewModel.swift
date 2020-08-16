@@ -19,13 +19,13 @@ protocol MainMenuViewModelProtocol {
 
 final class MainMenuViewModel: MainMenuViewModelProtocol {
     
-    private let coordinator: MainMenuCoordinatorProtocol
+    private let coordinator: MainMenuNavigatorProtocol
    
     var title: String { "Falling Words" }
     var buttonTitle: String { "Play" }
     var score: ((String) -> ())?
 
-    init(coordinator: MainMenuCoordinatorProtocol) {
+    init(coordinator: MainMenuNavigatorProtocol) {
         self.coordinator = coordinator
         NotificationCenter.default.addObserver(self, selector: #selector(showTotalScore(notification:)), name: .totalScore, object: nil)
     }
