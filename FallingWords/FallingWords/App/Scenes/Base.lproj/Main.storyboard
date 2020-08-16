@@ -71,7 +71,7 @@
         <!--Game Screen View Controller-->
         <scene sceneID="33y-hD-vpy">
             <objects>
-                <viewController storyboardIdentifier="GameScreenViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lby-gv-Jpf" customClass="GameScreenViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameScreenViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lby-gv-Jpf" customClass="GameScreenViewController" customModule="FallingWords" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ahH-mV-stg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -92,6 +92,9 @@
                                         <state key="normal" title="Right">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTapRightButton:" destination="lby-gv-Jpf" eventType="touchUpInside" id="m7H-xh-6JJ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Csf-Jb-wvZ">
                                         <rect key="frame" x="135" y="0.0" width="115" height="60"/>
@@ -100,6 +103,9 @@
                                         <state key="normal" title="Wrong">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTapOnWrongButton:" destination="lby-gv-Jpf" eventType="touchUpInside" id="Kw0-hK-X5c"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -114,9 +120,12 @@
                                     <constraint firstAttribute="width" constant="40" id="udS-Fc-B1y"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="close"/>
+                                <connections>
+                                    <action selector="didTapOnCloseButton:" destination="lby-gv-Jpf" eventType="touchUpInside" id="bp7-gM-l7d"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ApplApplApplApplApplApplApplApplApplApplApplApplApplApplApplAppl" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k9I-4I-d7X">
-                                <rect key="frame" x="20" y="349" width="374" height="32.666666666666686"/>
+                                <rect key="frame" x="20" y="379" width="374" height="32.666666666666686"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -127,10 +136,16 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Word" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGr-Ai-x72">
+                                <rect key="frame" x="163.66666666666666" y="315.33333333333331" width="86.666666666666657" height="43.666666666666686"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="5M7-I6-qKg" firstAttribute="top" secondItem="k9I-4I-d7X" secondAttribute="bottom" constant="50" id="2WF-z7-3N5"/>
+                            <constraint firstItem="5M7-I6-qKg" firstAttribute="top" secondItem="k9I-4I-d7X" secondAttribute="bottom" constant="20" id="2WF-z7-3N5"/>
                             <constraint firstItem="RWR-0k-dcD" firstAttribute="top" secondItem="QDc-03-Rzz" secondAttribute="top" constant="20" id="6wr-aP-2hg"/>
                             <constraint firstItem="5M7-I6-qKg" firstAttribute="centerY" secondItem="ahH-mV-stg" secondAttribute="centerY" id="8Df-EI-zwI"/>
                             <constraint firstItem="QDc-03-Rzz" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sIR-Vv-fQ5" secondAttribute="trailing" constant="10" id="GPN-mN-xqg"/>
@@ -140,7 +155,9 @@
                             <constraint firstItem="2u9-3Z-RC2" firstAttribute="top" secondItem="5M7-I6-qKg" secondAttribute="bottom" constant="50" id="Uji-jh-0yV"/>
                             <constraint firstItem="QDc-03-Rzz" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="sIR-Vv-fQ5" secondAttribute="bottom" constant="10" id="Y6v-cR-L74"/>
                             <constraint firstItem="QDc-03-Rzz" firstAttribute="trailing" secondItem="RWR-0k-dcD" secondAttribute="trailing" constant="20" id="ZcL-n2-wZU"/>
+                            <constraint firstItem="k9I-4I-d7X" firstAttribute="top" secondItem="IGr-Ai-x72" secondAttribute="bottom" constant="20" id="aUM-uV-aA4"/>
                             <constraint firstItem="sIR-Vv-fQ5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QDc-03-Rzz" secondAttribute="leading" constant="10" id="awY-TE-jQP"/>
+                            <constraint firstItem="IGr-Ai-x72" firstAttribute="centerX" secondItem="ahH-mV-stg" secondAttribute="centerX" id="coB-KK-gbZ"/>
                             <constraint firstItem="sIR-Vv-fQ5" firstAttribute="top" secondItem="2u9-3Z-RC2" secondAttribute="bottom" constant="40" id="gUf-5P-fHd"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="k9I-4I-d7X" secondAttribute="trailing" constant="20" id="m0V-72-LYV"/>
                             <constraint firstItem="k9I-4I-d7X" firstAttribute="centerX" secondItem="ahH-mV-stg" secondAttribute="centerX" id="pj9-g5-ZaD"/>
@@ -148,6 +165,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QDc-03-Rzz"/>
                     </view>
+                    <connections>
+                        <outlet property="resultLabel" destination="sIR-Vv-fQ5" id="mKa-11-PVC"/>
+                        <outlet property="timerLabel" destination="5M7-I6-qKg" id="wUf-mg-Wji"/>
+                        <outlet property="wordLabel" destination="k9I-4I-d7X" id="QB9-yh-YXo"/>
+                        <outlet property="wordTitleLabel" destination="IGr-Ai-x72" id="kru-7q-Rgn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="syP-Zp-aev" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

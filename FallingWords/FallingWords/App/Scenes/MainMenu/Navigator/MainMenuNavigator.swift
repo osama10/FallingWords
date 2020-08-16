@@ -13,7 +13,7 @@ protocol MainMenuNavigatorProtocol {
 }
 
 final class MainMenuNavigator {
-    private let viewController: UIViewController
+    private weak var viewController: UIViewController!
     
     init(viewController: UIViewController) {
         self.viewController = viewController
@@ -23,6 +23,13 @@ final class MainMenuNavigator {
 
 extension MainMenuNavigator: MainMenuNavigatorProtocol {
     func toGameScreen() {
-        print("I am called")
+        let storyboard = UIStoryboard(storyboard: .main)
+        let gameScreenVC: GameScreenViewController = storyboard.instantiateViewController()
+        let useCase = GamePlayUseCase()
+        let navigator = GameScreenNavigator(viewController: gameScreenVC)
+        let viewModel = GameScreenViewModel(useCase: useCase, navigator: navigator)
+        gameScreenVC.viewModel = viewModel
+        gameScreenVC.modalPresentationStyle = .fullScreen
+        viewController.present(gameScreenVC, animated: true, completion: nil)
     }
 }

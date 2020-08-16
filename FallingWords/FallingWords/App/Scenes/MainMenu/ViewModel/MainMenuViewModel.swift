@@ -35,7 +35,7 @@ final class MainMenuViewModel: MainMenuViewModelProtocol {
     func didTapOnPlay() { coordinator.toGameScreen() }
     
     @objc private func showTotalScore(notification: Notification) {
-        let totalScore = (notification.userInfo?["score"] as? String) ?? "0"
+        let totalScore = (notification.userInfo?[Constant.totalScore] as? String) ?? "0"
         score?("Total Score: \(totalScore)")
     }
     

@@ -24,6 +24,9 @@
 		03705BEB24E875C200683E2F /* MainMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BEA24E875C200683E2F /* MainMenuViewModel.swift */; };
 		03705BEE24E8799100683E2F /* MainMenuNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BED24E8799100683E2F /* MainMenuNavigator.swift */; };
 		03705BF024E883F400683E2F /* NotificationName+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BEF24E883F400683E2F /* NotificationName+Extension.swift */; };
+		03705BF324E9AC9300683E2F /* GameScreenNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BF224E9AC9300683E2F /* GameScreenNavigator.swift */; };
+		03705BF524E9AE4100683E2F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BF424E9AE4100683E2F /* Constants.swift */; };
+		03705BF824E9B04900683E2F /* GameScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BF724E9B04900683E2F /* GameScreenViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,9 @@
 		03705BEA24E875C200683E2F /* MainMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewModel.swift; sourceTree = "<group>"; };
 		03705BED24E8799100683E2F /* MainMenuNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuNavigator.swift; sourceTree = "<group>"; };
 		03705BEF24E883F400683E2F /* NotificationName+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+Extension.swift"; sourceTree = "<group>"; };
+		03705BF224E9AC9300683E2F /* GameScreenNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenNavigator.swift; sourceTree = "<group>"; };
+		03705BF424E9AE4100683E2F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		03705BF724E9B04900683E2F /* GameScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +149,7 @@
 		03705BCD24E83F1D00683E2F /* GameScreen */ = {
 			isa = PBXGroup;
 			children = (
+				03705BF624E9B03A00683E2F /* ViewModel */,
 				03705BF124E9ABC700683E2F /* Navigator */,
 				03705BE624E8756B00683E2F /* View */,
 			);
@@ -229,6 +236,7 @@
 			children = (
 				03705BE224E8671B00683E2F /* Extensions */,
 				03705BCE24E83F4200683E2F /* SupportResources */,
+				03705BF424E9AE4100683E2F /* Constants.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -269,8 +277,17 @@
 		03705BF124E9ABC700683E2F /* Navigator */ = {
 			isa = PBXGroup;
 			children = (
+				03705BF224E9AC9300683E2F /* GameScreenNavigator.swift */,
 			);
 			path = Navigator;
+			sourceTree = "<group>";
+		};
+		03705BF624E9B03A00683E2F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				03705BF724E9B04900683E2F /* GameScreenViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,10 +398,13 @@
 				03705BEE24E8799100683E2F /* MainMenuNavigator.swift in Sources */,
 				03705BEB24E875C200683E2F /* MainMenuViewModel.swift in Sources */,
 				03705BE424E8672C00683E2F /* Storyboard+Extensions.swift in Sources */,
+				03705BF824E9B04900683E2F /* GameScreenViewModel.swift in Sources */,
 				03705BD824E85D5F00683E2F /* GameData.swift in Sources */,
+				03705BF324E9AC9300683E2F /* GameScreenNavigator.swift in Sources */,
 				03705BD624E85AAC00683E2F /* Word.swift in Sources */,
 				03705BDC24E85DD000683E2F /* GamePlayUseCase.swift in Sources */,
 				03705BE824E8758E00683E2F /* GameScreenViewController.swift in Sources */,
+				03705BF524E9AE4100683E2F /* Constants.swift in Sources */,
 				03705BA924E8373600683E2F /* AppDelegate.swift in Sources */,
 				03705BAB24E8373600683E2F /* SceneDelegate.swift in Sources */,
 			);
