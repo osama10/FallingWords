@@ -36,6 +36,7 @@
 		03705C0C24EAA9BA00683E2F /* InMemCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705C0B24EAA9BA00683E2F /* InMemCache.swift */; };
 		03705C1124EAAA2800683E2F /* IMWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705C1024EAAA2800683E2F /* IMWord.swift */; };
 		03705C1324EAAE8900683E2F /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705C1224EAAE8900683E2F /* DataStore.swift */; };
+		03705C1B24EAD06700683E2F /* GameDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705C1A24EAD06700683E2F /* GameDataManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		03705C0B24EAA9BA00683E2F /* InMemCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemCache.swift; sourceTree = "<group>"; };
 		03705C1024EAAA2800683E2F /* IMWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMWord.swift; sourceTree = "<group>"; };
 		03705C1224EAAE8900683E2F /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		03705C1A24EAD06700683E2F /* GameDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 		03705BBE24E8373A00683E2F /* FallingWordsTests */ = {
 			isa = PBXGroup;
 			children = (
+				03705C1624EACFB100683E2F /* DomainTests */,
 				03705BBF24E8373A00683E2F /* FallingWordsTests.swift */,
 				03705BC124E8373A00683E2F /* Info.plist */,
 			);
@@ -365,6 +368,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		03705C1624EACFB100683E2F /* DomainTests */ = {
+			isa = PBXGroup;
+			children = (
+				03705C1724EACFBB00683E2F /* Tests */,
+			);
+			path = DomainTests;
+			sourceTree = "<group>";
+		};
+		03705C1724EACFBB00683E2F /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				03705C1A24EAD06700683E2F /* GameDataManagerTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -499,6 +518,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03705BC024E8373A00683E2F /* FallingWordsTests.swift in Sources */,
+				03705C1B24EAD06700683E2F /* GameDataManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
