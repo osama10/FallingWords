@@ -25,12 +25,12 @@ final class GameDataManager {
     private func generateGameData(originalWords: [String], translations: [String]) -> [GameData] {
         var result = [GameData]()
         let totalWords = originalWords.count
-        let maxNum = min(3, totalWords)
+        let maxNum = min(4, totalWords)
         
         originalWords.forEach { word in
             var option = Set<String>()
             option.insert(dataDict[word]!)
-            var counter = 0
+            var counter = 1
             while counter != maxNum {
                 let translation = translations.randomElement() ?? ""
                 if translation != dataDict[word]! && !option.contains(translation) {
