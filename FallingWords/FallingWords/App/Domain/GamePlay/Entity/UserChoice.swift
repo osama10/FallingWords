@@ -11,5 +11,5 @@ import Foundation
 enum UserChoice {
     case right(answer: String)
     case wrong(answer: String)
-    case none
+    case none(translation:String)
 }

@@ -25,7 +25,7 @@ extension MainMenuNavigator: MainMenuNavigatorProtocol {
     func toGameScreen() {
         let storyboard = UIStoryboard(storyboard: .main)
         let gameScreenVC: GameScreenViewController = storyboard.instantiateViewController()
-        let useCase = GamePlayUseCase()
+        let useCase = GamePlayUseCase(wordsRepository: WordsRepository())
         let navigator = GameScreenNavigator(viewController: gameScreenVC)
         let viewModel = GameScreenViewModel(useCase: useCase, navigator: navigator)
         gameScreenVC.viewModel = viewModel

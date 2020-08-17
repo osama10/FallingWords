@@ -41,9 +41,9 @@ final class GameScreenViewModel: GameScreenViewModelProtocol {
     var setTranslationPosition: (() -> ())?
     var disableButtonInteractions: (() -> ())?
     
-    let useCase: GamePlayUseCaseProtocol
+    var useCase: GamePlayUseCaseProtocol
     let navigator: GameScreenNavigatorProtocol
-    private var gameData = GameData(word: "", options: [])
+    private var gameData: GameData
     private var counter = 0
     private let nextVal :((Int, Int) -> Int) = { $0 % $1 }
     private var timerVal = 0
@@ -52,10 +52,12 @@ final class GameScreenViewModel: GameScreenViewModelProtocol {
     init(useCase: GamePlayUseCaseProtocol, navigator: GameScreenNavigatorProtocol) {
         self.useCase = useCase
         self.navigator = navigator
+        self.gameData = useCase.initialGameData
+        self.useCase.updateGameData = { [weak self] (gameData) in self?.updateGameData(gameData: gameData) }
+        self.useCase.endGame = {[weak self] in self?.navigator.dismiss(totalScore: self?.useCase.getScore() ?? "0")}
     }
     
     func viewDidLoad() {
-        gameData = useCase.getWord()
         answer?("")
         word?(gameData.word)
         translation?(gameData.options.first ?? "")
@@ -80,11 +82,12 @@ final class GameScreenViewModel: GameScreenViewModelProtocol {
     }
     
     func didTranslationOutOfScreen() {
+        let option = gameData.options[counter]
         counter = nextVal(counter + 1, gameData.options.count)
         hideTranslation?()
         translation?(gameData.options[counter])
         setTranslationPosition?()
-        checkUserChoice(userChoice: .none)
+        checkUserChoice(userChoice: .none(translation: option))
         showTranslation?()
         invalidateTimer()
         startTimer()
@@ -119,6 +122,14 @@ final class GameScreenViewModel: GameScreenViewModelProtocol {
          let totalScore = useCase.getScore()
          navigator.dismiss(totalScore: totalScore)
      }
+    
+    private func updateGameData(gameData: GameData) {
+        self.gameData = gameData
+        counter = 0
+        word?(gameData.word)
+        translation?(gameData.options[0])
+        setTranslationPosition?()
+    }
     
     private func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: handleTimer)
