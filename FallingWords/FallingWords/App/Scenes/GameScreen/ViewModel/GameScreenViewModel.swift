@@ -83,36 +83,25 @@ final class GameScreenViewModel: GameScreenViewModelProtocol {
     
     func didTranslationOutOfScreen() {
         let option = gameData.options[counter]
-        counter = nextVal(counter + 1, gameData.options.count)
-        hideTranslation?()
-        translation?(gameData.options[counter])
-        setTranslationPosition?()
-        checkUserChoice(userChoice: .none(translation: option))
-        showTranslation?()
-        invalidateTimer()
-        startTimer()
+        handleUserResponse(userChoice: .none(translation: option))
     }
     
     func didTapOnRightAnswerButton() {
         let userChoice = gameData.options[counter]
-        counter = nextVal(counter + 1, gameData.options.count)
-        hideTranslation?()
-        translation?(gameData.options[counter])
-        setTranslationPosition?()
-        checkUserChoice(userChoice: .right(answer: userChoice))
-        showTranslation?()
-        invalidateTimer()
-        startTimer()
-
+        handleUserResponse(userChoice: .right(answer: userChoice))
     }
     
     func didTapOnWrongAnserButton() {
         let userChoice = gameData.options[counter]
+        handleUserResponse(userChoice: .wrong(answer: userChoice))
+    }
+    
+    private func handleUserResponse(userChoice: UserChoice) {
         counter = nextVal(counter + 1, gameData.options.count)
         hideTranslation?()
         translation?(gameData.options[counter])
         setTranslationPosition?()
-        checkUserChoice(userChoice: .wrong(answer: userChoice))
+        checkUserChoice(userChoice: userChoice)
         showTranslation?()
         invalidateTimer()
         startTimer()
