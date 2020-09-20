@@ -10,16 +10,20 @@ import Foundation
 
 protocol GameScreenViewModelProtocol: class {
     
-    var answer: ((String) -> ())? { get set }
-    var word: ((String) -> ())? { get set }
-    var translation: ((String) -> ())? { get set }
-    var updateTimer: ((String) -> ())? { get set }
+    // MARK:- Output
+    var answer: Observable<String> { get }
+    var word: Observable<String> { get }
+    var translation: Observable<String> { get }
+    var remainingTime: Observable<String> { get }
+    var isButtonInteractionsEnabled: Observable<Bool> { get }
+    var positionTranslation: (() -> ())? { get set }
     var wordTitle: String { get }
+    
+    // MARK:- Actions
     var showTranslation: (() -> ())? { get set }
     var hideTranslation: (() -> ())? { get set }
-    var setTranslationPosition: (() -> ())? { get set }
-    var disableButtonInteractions : (() -> ())? { get set }
     
+    // MARK:- Input
     func viewDidLoad()
     func viewDidAppear()
     func calculateTranslationPosition(translationWidth: Double, totalWidth:Double) -> Double
@@ -31,15 +35,17 @@ protocol GameScreenViewModelProtocol: class {
 
 final class GameScreenViewModel: GameScreenViewModelProtocol {
     
-    var answer: ((String) -> ())?
-    var word: ((String) -> ())?
-    var translation: ((String) -> ())?
-    var updateTimer: ((String) -> ())?
+    var word: Observable<String> = Observable("")
+    var translation: Observable<String> = Observable("")
+    var remainingTime: Observable<String> = Observable("")
+    var answer: Observable<String> = Observable("")
+    var isButtonInteractionsEnabled: Observable<Bool> = Observable(false)
+    var animateTranslaions: Observable<Bool> = Observable(false)
     var wordTitle: String { "Word" }
+    
     var showTranslation: (() -> ())?
     var hideTranslation: (() -> ())?
-    var setTranslationPosition: (() -> ())?
-    var disableButtonInteractions: (() -> ())?
+    var positionTranslation: (() -> ())?
     
     var useCase: GamePlayUseCaseProtocol
     let navigator: GameScreenNavigatorProtocol
@@ -59,16 +65,17 @@ final class GameScreenViewModel: GameScreenViewModelProtocol {
     }
     
     func viewDidLoad() {
-        answer?("")
-        word?(gameData.word)
-        translation?(gameData.options.first ?? "")
-        setTranslationPosition?()
-        disableButtonInteractions?()
-        updateTimer?("")
+        answer.value = ""
+        word.value = gameData.word
+        translation.value = gameData.options.first ?? ""
+        positionTranslation?()
+        isButtonInteractionsEnabled.value = false
+        remainingTime.value = ""
     }
     
     func viewDidAppear() {
         showTranslation?()
+        isButtonInteractionsEnabled.value = true
         startTimer()
     }
     
@@ -100,10 +107,11 @@ final class GameScreenViewModel: GameScreenViewModelProtocol {
     private func handleUserResponse(userChoice: UserChoice) {
         counter = nextVal(counter + 1, gameData.options.count)
         hideTranslation?()
-        translation?(gameData.options[counter])
-        setTranslationPosition?()
+        translation.value = gameData.options[counter]
+        positionTranslation?()
         checkUserChoice(userChoice: userChoice)
         showTranslation?()
+        isButtonInteractionsEnabled.value = true
         invalidateTimer()
         startTimer()
     }
@@ -116,9 +124,9 @@ final class GameScreenViewModel: GameScreenViewModelProtocol {
     private func updateGameData(gameData: GameData) {
         self.gameData = gameData
         counter = 0
-        word?(gameData.word)
-        translation?(gameData.options[0])
-        setTranslationPosition?()
+        word.value = gameData.word
+        translation.value = gameData.options[0]
+        positionTranslation?()
     }
     
     private func startTimer() {
@@ -127,23 +135,23 @@ final class GameScreenViewModel: GameScreenViewModelProtocol {
     
     private func handleTimer(timer: Timer) {
         timerVal += 1
-        updateTimer?("Time left: \(self.timerVal)")
+        remainingTime.value = "Time left: \(self.timerVal)"
         if timerVal == 11 { invalidateTimer() }
     }
     
     private func invalidateTimer() {
         timer.invalidate()
         timerVal = 0
-        updateTimer?("")
+        remainingTime.value = ""
     }
     
     private func checkUserChoice(userChoice: UserChoice) {
         useCase.check(userChoice: userChoice) { [weak self] (result) in
             switch userChoice {
             case .none:
-                self?.answer?("No Answer")
+                self?.answer.value = "No Answer"
             default:
-                self?.answer?(result ? "Right Answer" : "Wrong Answer")
+                self?.answer.value = result ? "Right Answer" : "Wrong Answer"
             }
         }
     }

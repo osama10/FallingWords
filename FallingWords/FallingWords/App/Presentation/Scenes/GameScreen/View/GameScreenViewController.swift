@@ -25,6 +25,7 @@ class GameScreenViewController: UIViewController {
         super.viewDidLoad()
         setupTranslationLabel()
         bindViewModel()
+        setActions()
         viewModel.viewDidLoad()
     }
     
@@ -34,36 +35,28 @@ class GameScreenViewController: UIViewController {
     }
     
     private func bindViewModel() {
-       
-        viewModel.answer = { [weak self] (result) in self?.resultLabel.text = result }
-        viewModel.word = { [weak self] (word) in self?.wordLabel.text = word }
-        viewModel.updateTimer = { [weak self] (remainingTime) in self?.timerLabel.text = remainingTime }
-        viewModel.disableButtonInteractions = { [weak self] in self?.setButtonInteraction(enabled: false) }
-        wordTitleLabel.text = viewModel.wordTitle
-
-        viewModel.showTranslation = { [weak self] in
-            self?.animateTranslationLabel()
-            self?.setButtonInteraction(enabled: true)
-        }
-        
-        viewModel.translation = { [weak self] (translation) in
+       viewModel.answer.observe(on: self) { [weak self] (result) in self?.resultLabel.text = result }
+        viewModel.word.observe(on: self) { [weak self] (word) in self?.wordLabel.text = word }
+        viewModel.remainingTime.observe(on: self) { [weak self] (remainingTime) in self?.timerLabel.text = remainingTime }
+        viewModel.isButtonInteractionsEnabled.observe(on: self){ [weak self] in self?.setButtonInteraction(enabled: $0) }
+        viewModel.translation.observe(on: self) { [weak self] (translation) in
             self?.translationLabel.text = translation
             self?.translationLabel.setWidth()
         }
         
-        viewModel.setTranslationPosition = { [weak self] in
-            let translationWidth = Double(self?.translationLabel.frame.size.width ?? 0)
-            let totalWidth = Double(UIScreen.main.bounds.width)
-            let xPos = self?.viewModel.calculateTranslationPosition(translationWidth: translationWidth , totalWidth: totalWidth)
-            self?.translationLabel.frame.origin.x = CGFloat(xPos ?? 0.0)
-        }
+        wordTitleLabel.text = viewModel.wordTitle
+    }
+    
+    private func setActions() {
+        viewModel.showTranslation = { [weak self] in self?.animateTranslationLabel() }
+        
+        viewModel.positionTranslation = { [weak self] in self?.setTranslationPosition() }
         
         viewModel.hideTranslation = { [weak self] in
             self?.translationLabel.isHidden = true
             self?.translationLabel.layer.removeAllAnimations()
             self?.translationLabel.frame.origin = CGPoint(x: 150, y: -30)
         }
-        
     }
     
     private func setupTranslationLabel() {
@@ -86,6 +79,13 @@ class GameScreenViewController: UIViewController {
     private func setButtonInteraction(enabled: Bool) {
         rightAnswerButton.isUserInteractionEnabled = enabled
         wrongAnswerButton.isUserInteractionEnabled = enabled
+    }
+    
+    private func setTranslationPosition() {
+        let translationWidth = Double(translationLabel.frame.size.width)
+        let totalWidth = Double(UIScreen.main.bounds.width)
+        let xPos = viewModel.calculateTranslationPosition(translationWidth: translationWidth , totalWidth: totalWidth)
+        translationLabel.frame.origin.x = CGFloat(xPos)
     }
 }
 
