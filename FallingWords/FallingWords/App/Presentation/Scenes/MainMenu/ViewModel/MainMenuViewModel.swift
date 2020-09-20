@@ -11,7 +11,7 @@ import Foundation
 protocol MainMenuViewModelProtocol {
     var title: String { get }
     var buttonTitle:String { get }
-    var score: ((String) -> ())?{ get set }
+    var score: Observable<String>{ get set }
     
     func didTapOnPlay()
     func viewDidLoad()
@@ -23,20 +23,20 @@ final class MainMenuViewModel: MainMenuViewModelProtocol {
    
     var title: String { "Falling Words" }
     var buttonTitle: String { "Play" }
-    var score: ((String) -> ())?
-
+    var score: Observable<String> = Observable("")
+   
     init(coordinator: MainMenuNavigatorProtocol) {
         self.coordinator = coordinator
         NotificationCenter.default.addObserver(self, selector: #selector(showTotalScore(notification:)), name: .totalScore, object: nil)
     }
    
-    func viewDidLoad() { score?("") }
+    func viewDidLoad() { score.value = "" }
     
     func didTapOnPlay() { coordinator.toGameScreen() }
     
     @objc private func showTotalScore(notification: Notification) {
         let totalScore = (notification.userInfo?[Constant.totalScore] as? String) ?? "0"
-        score?("Total Score: \(totalScore)")
+        score.value = "Total Score: \(totalScore)"
     }
     
 }

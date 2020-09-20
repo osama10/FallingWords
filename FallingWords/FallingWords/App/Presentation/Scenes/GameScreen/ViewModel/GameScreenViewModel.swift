@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol GameScreenViewModelProtocol {
+protocol GameScreenViewModelProtocol: class {
     
     var answer: ((String) -> ())? { get set }
     var word: ((String) -> ())? { get set }
@@ -43,6 +43,7 @@ final class GameScreenViewModel: GameScreenViewModelProtocol {
     
     var useCase: GamePlayUseCaseProtocol
     let navigator: GameScreenNavigatorProtocol
+    
     private var gameData: GameData
     private var counter = 0
     private let nextVal :((Int, Int) -> Int) = { $0 % $1 }

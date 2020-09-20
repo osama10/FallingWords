@@ -13,7 +13,7 @@ protocol GameScreenNavigatorProtocol {
 }
 
 final class GameScreenNavigator {
-    let viewController: UIViewController
+    weak var viewController: UIViewController!
     
     init(viewController: UIViewController) {
         self.viewController = viewController

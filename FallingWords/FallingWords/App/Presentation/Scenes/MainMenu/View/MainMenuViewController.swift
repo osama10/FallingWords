@@ -18,14 +18,18 @@ class MainMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setStaticData()
         bindViewModel()
         viewModel.viewDidLoad()
     }
     
-    private func bindViewModel() {
+    private func setStaticData() {
         titleLabel.text = viewModel.title
         playButton.setTitle(viewModel.buttonTitle, for: .normal)
-        viewModel.score = { [weak self] (totalScore) in self?.scoreLabel.text = totalScore }
+    }
+    
+    private func bindViewModel() {
+        viewModel.score.observe(on: self){ [weak self] in self?.scoreLabel.text = $0 }
     }
     
     @IBAction func didTapOnPlay(_ sender: UIButton) {

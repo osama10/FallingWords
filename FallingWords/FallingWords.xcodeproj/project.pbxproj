@@ -41,6 +41,7 @@
 		03705C2024EAD94700683E2F /* GamePlayUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705C1F24EAD94700683E2F /* GamePlayUseCaseTests.swift */; };
 		03705C2324EADACB00683E2F /* FakeDomainData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705C2224EADACB00683E2F /* FakeDomainData.swift */; };
 		03705C2524EAE02B00683E2F /* MockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705C2424EAE02B00683E2F /* MockViewModel.swift */; };
+		03CA075E2517B49A00AA82FB /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CA075D2517B49A00AA82FB /* Observable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		03705C1F24EAD94700683E2F /* GamePlayUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayUseCaseTests.swift; sourceTree = "<group>"; };
 		03705C2224EADACB00683E2F /* FakeDomainData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeDomainData.swift; sourceTree = "<group>"; };
 		03705C2424EAE02B00683E2F /* MockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewModel.swift; sourceTree = "<group>"; };
+		03CA075D2517B49A00AA82FB /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,7 +260,7 @@
 		03705BE024E866E100683E2F /* App */ = {
 			isa = PBXGroup;
 			children = (
-				03705BCF24E83F6200683E2F /* Scenes */,
+				03CA075B2517B45C00AA82FB /* Presentation */,
 				03705BCB24E83EF900683E2F /* Data */,
 				03705BCA24E83B4900683E2F /* Domain */,
 			);
@@ -412,6 +414,23 @@
 			path = FakeData;
 			sourceTree = "<group>";
 		};
+		03CA075B2517B45C00AA82FB /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				03CA075C2517B46800AA82FB /* Utils */,
+				03705BCF24E83F6200683E2F /* Scenes */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		03CA075C2517B46800AA82FB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				03CA075D2517B49A00AA82FB /* Observable.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -525,6 +544,7 @@
 				03705BEB24E875C200683E2F /* MainMenuViewModel.swift in Sources */,
 				03705BE424E8672C00683E2F /* Storyboard+Extensions.swift in Sources */,
 				03705C0724EAA4D200683E2F /* GameDataManager.swift in Sources */,
+				03CA075E2517B49A00AA82FB /* Observable.swift in Sources */,
 				03705BF824E9B04900683E2F /* GameScreenViewModel.swift in Sources */,
 				03705BD824E85D5F00683E2F /* GameData.swift in Sources */,
 				03705BF324E9AC9300683E2F /* GameScreenNavigator.swift in Sources */,
