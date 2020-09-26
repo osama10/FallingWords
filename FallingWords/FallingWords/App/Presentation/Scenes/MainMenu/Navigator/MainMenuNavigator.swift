@@ -18,7 +18,6 @@ final class MainMenuNavigator {
     init(viewController: UIViewController) {
         self.viewController = viewController
     }
-    
 }
 
 extension MainMenuNavigator: MainMenuNavigatorProtocol {
@@ -28,7 +27,8 @@ extension MainMenuNavigator: MainMenuNavigatorProtocol {
         let repository = WordsRepository(localDataStore: InMemCache())
         let useCase = GamePlayUseCase(wordsRepository: repository)
         let navigator = GameScreenNavigator(viewController: gameScreenVC)
-        let viewModel = GameScreenViewModel(useCase: useCase, navigator: navigator)
+        let actions = GameScreenActions(dismiss: navigator.dismiss)
+        let viewModel = GameScreenViewModel(useCase: useCase, actions: actions)
         gameScreenVC.viewModel = viewModel
         gameScreenVC.modalPresentationStyle = .fullScreen
         viewController.present(gameScreenVC, animated: true, completion: nil)

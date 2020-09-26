@@ -8,9 +8,11 @@
 
 import Foundation
 
-protocol GameScreenViewModelProtocol: class {
-    
-    // MARK:- Output
+struct GameScreenActions {
+    let dismiss: (String) -> ()
+}
+
+protocol GameScreenViewModelOutput {
     var answer: Observable<String> { get }
     var word: Observable<String> { get }
     var translation: Observable<String> { get }
@@ -18,12 +20,11 @@ protocol GameScreenViewModelProtocol: class {
     var isButtonInteractionsEnabled: Observable<Bool> { get }
     var positionTranslation: (() -> ())? { get set }
     var wordTitle: String { get }
-    
-    // MARK:- Actions
     var showTranslation: (() -> ())? { get set }
     var hideTranslation: (() -> ())? { get set }
-    
-    // MARK:- Input
+}
+
+protocol GameScreenViewModelInput {
     func viewDidLoad()
     func viewDidAppear()
     func calculateTranslationPosition(translationWidth: Double, totalWidth:Double) -> Double
@@ -32,6 +33,8 @@ protocol GameScreenViewModelProtocol: class {
     func didTapOnRightAnswerButton()
     func didTapOnWrongAnserButton()
 }
+
+protocol GameScreenViewModelProtocol: class, GameScreenViewModelInput, GameScreenViewModelOutput { }
 
 final class GameScreenViewModel: GameScreenViewModelProtocol {
     
@@ -48,7 +51,7 @@ final class GameScreenViewModel: GameScreenViewModelProtocol {
     var positionTranslation: (() -> ())?
     
     var useCase: GamePlayUseCaseProtocol
-    let navigator: GameScreenNavigatorProtocol
+    private let actions: GameScreenActions
     
     private var gameData: GameData
     private var counter = 0
@@ -56,12 +59,12 @@ final class GameScreenViewModel: GameScreenViewModelProtocol {
     private var timerVal = 0
     private var timer: Timer!
     
-    init(useCase: GamePlayUseCaseProtocol, navigator: GameScreenNavigatorProtocol) {
+    init(useCase: GamePlayUseCaseProtocol, actions: GameScreenActions) {
         self.useCase = useCase
-        self.navigator = navigator
+        self.actions = actions
         self.gameData = useCase.initialGameData
         self.useCase.updateGameData = { [weak self] (gameData) in self?.updateGameData(gameData: gameData) }
-        self.useCase.endGame = {[weak self] in self?.navigator.dismiss(totalScore: self?.useCase.getScore() ?? "0")}
+        self.useCase.endGame = { [weak self] in self?.actions.dismiss(self?.useCase.getScore() ?? "0") }
     }
     
     func viewDidLoad() {
@@ -118,7 +121,7 @@ final class GameScreenViewModel: GameScreenViewModelProtocol {
     
     func didTapOnCloseButton() {
          let totalScore = useCase.getScore()
-         navigator.dismiss(totalScore: totalScore)
+         actions.dismiss(totalScore)
      }
     
     private func updateGameData(gameData: GameData) {
