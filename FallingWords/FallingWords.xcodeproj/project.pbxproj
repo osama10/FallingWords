@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0326B039251FE1FB00BBD053 /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0326B038251FE1FB00BBD053 /* AppFlowCoordinator.swift */; };
+		0326B03E251FE25C00BBD053 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0326B03D251FE25C00BBD053 /* AppDIContainer.swift */; };
+		0326B048251FE3B300BBD053 /* GameSceneDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0326B047251FE3B300BBD053 /* GameSceneDIContainer.swift */; };
 		03705BA924E8373600683E2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BA824E8373600683E2F /* AppDelegate.swift */; };
 		03705BAB24E8373600683E2F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BAA24E8373600683E2F /* SceneDelegate.swift */; };
 		03705BAD24E8373600683E2F /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BAC24E8373600683E2F /* MainMenuViewController.swift */; };
@@ -18,7 +21,6 @@
 		03705BD624E85AAC00683E2F /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BD524E85AAC00683E2F /* Word.swift */; };
 		03705BD824E85D5F00683E2F /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BD724E85D5F00683E2F /* GameData.swift */; };
 		03705BDC24E85DD000683E2F /* GamePlayUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BDB24E85DD000683E2F /* GamePlayUseCase.swift */; };
-		03705BDF24E8667000683E2F /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BDE24E8667000683E2F /* AppNavigator.swift */; };
 		03705BE424E8672C00683E2F /* Storyboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BE324E8672C00683E2F /* Storyboard+Extensions.swift */; };
 		03705BE824E8758E00683E2F /* GameScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BE724E8758E00683E2F /* GameScreenViewController.swift */; };
 		03705BEB24E875C200683E2F /* MainMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705BEA24E875C200683E2F /* MainMenuViewModel.swift */; };
@@ -55,6 +57,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0326B038251FE1FB00BBD053 /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
+		0326B03D251FE25C00BBD053 /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
+		0326B047251FE3B300BBD053 /* GameSceneDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneDIContainer.swift; sourceTree = "<group>"; };
 		03705BA524E8373600683E2F /* FallingWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FallingWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03705BA824E8373600683E2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03705BAA24E8373600683E2F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,7 +75,6 @@
 		03705BD524E85AAC00683E2F /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		03705BD724E85D5F00683E2F /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		03705BDB24E85DD000683E2F /* GamePlayUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayUseCase.swift; sourceTree = "<group>"; };
-		03705BDE24E8667000683E2F /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigator.swift; sourceTree = "<group>"; };
 		03705BE324E8672C00683E2F /* Storyboard+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Extensions.swift"; sourceTree = "<group>"; };
 		03705BE724E8758E00683E2F /* GameScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenViewController.swift; sourceTree = "<group>"; };
 		03705BEA24E875C200683E2F /* MainMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewModel.swift; sourceTree = "<group>"; };
@@ -114,6 +118,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0326B03C251FE24B00BBD053 /* DIContainer */ = {
+			isa = PBXGroup;
+			children = (
+				0326B03D251FE25C00BBD053 /* AppDIContainer.swift */,
+				0326B047251FE3B300BBD053 /* GameSceneDIContainer.swift */,
+			);
+			path = DIContainer;
+			sourceTree = "<group>";
+		};
+		0326B043251FE39000BBD053 /* GameScene */ = {
+			isa = PBXGroup;
+			children = (
+				03705BB324E8373900683E2F /* LaunchScreen.storyboard */,
+				03705BAE24E8373600683E2F /* Main.storyboard */,
+				03705BCC24E83F0B00683E2F /* MainMenu */,
+				03705BCD24E83F1D00683E2F /* GameScreen */,
+			);
+			path = GameScene;
+			sourceTree = "<group>";
+		};
 		03705B9C24E8373600683E2F = {
 			isa = PBXGroup;
 			children = (
@@ -202,10 +226,7 @@
 		03705BCF24E83F6200683E2F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				03705BB324E8373900683E2F /* LaunchScreen.storyboard */,
-				03705BAE24E8373600683E2F /* Main.storyboard */,
-				03705BCC24E83F0B00683E2F /* MainMenu */,
-				03705BCD24E83F1D00683E2F /* GameScreen */,
+				0326B043251FE39000BBD053 /* GameScene */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -213,9 +234,10 @@
 		03705BD124E83FCD00683E2F /* AppStartup */ = {
 			isa = PBXGroup;
 			children = (
+				0326B03C251FE24B00BBD053 /* DIContainer */,
 				03705BA824E8373600683E2F /* AppDelegate.swift */,
 				03705BAA24E8373600683E2F /* SceneDelegate.swift */,
-				03705BDE24E8667000683E2F /* AppNavigator.swift */,
+				0326B038251FE1FB00BBD053 /* AppFlowCoordinator.swift */,
 			);
 			path = AppStartup;
 			sourceTree = "<group>";
@@ -534,19 +556,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				03705BFC24E9CB1B00683E2F /* UILabel+Extension.swift in Sources */,
+				0326B048251FE3B300BBD053 /* GameSceneDIContainer.swift in Sources */,
 				03705C1324EAAE8900683E2F /* DataStore.swift in Sources */,
 				03705C0C24EAA9BA00683E2F /* InMemCache.swift in Sources */,
 				03705BAD24E8373600683E2F /* MainMenuViewController.swift in Sources */,
 				03705C0124E9EE5C00683E2F /* WordsRepositoryInterface.swift in Sources */,
-				03705BDF24E8667000683E2F /* AppNavigator.swift in Sources */,
 				03705BF024E883F400683E2F /* NotificationName+Extension.swift in Sources */,
 				03705BEE24E8799100683E2F /* MainMenuNavigator.swift in Sources */,
+				0326B03E251FE25C00BBD053 /* AppDIContainer.swift in Sources */,
 				03705BEB24E875C200683E2F /* MainMenuViewModel.swift in Sources */,
 				03705BE424E8672C00683E2F /* Storyboard+Extensions.swift in Sources */,
 				03705C0724EAA4D200683E2F /* GameDataManager.swift in Sources */,
 				03CA075E2517B49A00AA82FB /* Observable.swift in Sources */,
 				03705BF824E9B04900683E2F /* GameScreenViewModel.swift in Sources */,
 				03705BD824E85D5F00683E2F /* GameData.swift in Sources */,
+				0326B039251FE1FB00BBD053 /* AppFlowCoordinator.swift in Sources */,
 				03705BF324E9AC9300683E2F /* GameScreenNavigator.swift in Sources */,
 				03705C1124EAAA2800683E2F /* IMWord.swift in Sources */,
 				03705BD624E85AAC00683E2F /* Word.swift in Sources */,

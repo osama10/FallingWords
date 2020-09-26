@@ -13,10 +13,21 @@ protocol MainMenuNavigatorProtocol {
 }
 
 final class MainMenuNavigator {
-    private weak var viewController: UIViewController!
     
-    init(viewController: UIViewController) {
-        self.viewController = viewController
+    private weak var window: UIWindow!
+    
+    init(window: UIWindow) {
+        self.window = window
+    }
+    
+    func start() {
+        let storyboard = UIStoryboard(storyboard: .main)
+        let mainMenuViewController: MainMenuViewController = storyboard.initialViewController()
+        let coordinator = MainMenuNavigator(window: window)
+        let actions = MainMenuViewModelActions(showGameScreen: coordinator.toGameScreen)
+        mainMenuViewController.viewModel = MainMenuViewModel(actions: actions)
+        window.rootViewController = mainMenuViewController
+        window?.makeKeyAndVisible()
     }
 }
 
@@ -31,6 +42,6 @@ extension MainMenuNavigator: MainMenuNavigatorProtocol {
         let viewModel = GameScreenViewModel(useCase: useCase, actions: actions)
         gameScreenVC.viewModel = viewModel
         gameScreenVC.modalPresentationStyle = .fullScreen
-        viewController.present(gameScreenVC, animated: true, completion: nil)
+        window.rootViewController?.present(gameScreenVC, animated: true, completion: nil)
     }
 }
