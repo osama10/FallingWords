@@ -8,35 +8,44 @@
 
 import Foundation
 
-protocol MainMenuViewModelProtocol {
+struct MainMenuViewModelActions {
+    let showGameScreen: () -> ()
+}
+
+protocol  MainMenuViewModelOutput {
     var title: String { get }
     var buttonTitle:String { get }
     var score: Observable<String>{ get set }
-    
+}
+
+protocol  MainMenuViewModelInput {
     func didTapOnPlay()
     func viewDidLoad()
 }
 
+protocol MainMenuViewModelProtocol: MainMenuViewModelInput, MainMenuViewModelOutput { }
+
 final class MainMenuViewModel: MainMenuViewModelProtocol {
     
-    private let coordinator: MainMenuNavigatorProtocol
-   
+    private let actions: MainMenuViewModelActions
+    
     var title: String { "Falling Words" }
     var buttonTitle: String { "Play" }
     var score: Observable<String> = Observable("")
    
-    init(coordinator: MainMenuNavigatorProtocol) {
-        self.coordinator = coordinator
+    init(actions: MainMenuViewModelActions) {
+        self.actions = actions
         NotificationCenter.default.addObserver(self, selector: #selector(showTotalScore(notification:)), name: .totalScore, object: nil)
     }
    
-    func viewDidLoad() { score.value = "" }
-    
-    func didTapOnPlay() { coordinator.toGameScreen() }
-    
     @objc private func showTotalScore(notification: Notification) {
         let totalScore = (notification.userInfo?[Constant.totalScore] as? String) ?? "0"
         score.value = "Total Score: \(totalScore)"
     }
     
+}
+
+extension MainMenuViewModel {
+    func viewDidLoad() { score.value = "" }
+    func didTapOnPlay() { actions.showGameScreen() }
 }

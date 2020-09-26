@@ -13,7 +13,8 @@ struct AppNavigator {
         let storyboard = UIStoryboard(storyboard: .main)
         let mainMenuViewController: MainMenuViewController = storyboard.initialViewController()
         let coordinator = MainMenuNavigator(viewController: mainMenuViewController)
-        mainMenuViewController.viewModel = MainMenuViewModel(coordinator: coordinator)
+        let actions = MainMenuViewModelActions(showGameScreen: coordinator.toGameScreen)
+        mainMenuViewController.viewModel = MainMenuViewModel(actions: actions)
         window.rootViewController = mainMenuViewController
     }
 }
