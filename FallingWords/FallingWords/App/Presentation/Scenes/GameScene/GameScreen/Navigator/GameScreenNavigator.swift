@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol GameScreenNavigatorProtocol {
-    func dismiss(totalScore: String)
-}
-
 final class GameScreenNavigator {
     weak var viewController: UIViewController!
     
@@ -20,7 +16,7 @@ final class GameScreenNavigator {
     }
 }
 
-extension GameScreenNavigator: GameScreenNavigatorProtocol {
+extension GameScreenNavigator {
     func dismiss(totalScore: String) {
         NotificationCenter.default.post(name: .totalScore, object: nil, userInfo: [Constant.totalScore:totalScore])
         viewController.dismiss(animated: true, completion: nil)

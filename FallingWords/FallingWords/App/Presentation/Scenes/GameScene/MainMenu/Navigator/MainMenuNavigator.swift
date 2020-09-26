@@ -8,40 +8,32 @@
 
 import UIKit
 
-protocol MainMenuNavigatorProtocol {
-    func toGameScreen()
+protocol MainMenuFlowCoordinatorDependencies {
+    func makeMainMenuViewController(actions: MainMenuViewModelActions) -> MainMenuViewController
+    func makeGameScreenViewController() -> GameScreenViewController
 }
 
 final class MainMenuNavigator {
     
     private weak var window: UIWindow!
+    private let dependencies: MainMenuFlowCoordinatorDependencies
     
-    init(window: UIWindow) {
+    init(window: UIWindow, dependencies: MainMenuFlowCoordinatorDependencies) {
         self.window = window
+        self.dependencies = dependencies
     }
     
     func start() {
-        let storyboard = UIStoryboard(storyboard: .main)
-        let mainMenuViewController: MainMenuViewController = storyboard.initialViewController()
-        let coordinator = MainMenuNavigator(window: window)
-        let actions = MainMenuViewModelActions(showGameScreen: coordinator.toGameScreen)
-        mainMenuViewController.viewModel = MainMenuViewModel(actions: actions)
+        let actions = MainMenuViewModelActions(showGameScreen: toGameScreen)
+        let mainMenuViewController = dependencies.makeMainMenuViewController(actions: actions)
         window.rootViewController = mainMenuViewController
         window?.makeKeyAndVisible()
     }
 }
 
-extension MainMenuNavigator: MainMenuNavigatorProtocol {
+extension MainMenuNavigator {
     func toGameScreen() {
-        let storyboard = UIStoryboard(storyboard: .main)
-        let gameScreenVC: GameScreenViewController = storyboard.instantiateViewController()
-        let repository = WordsRepository(localDataStore: InMemCache())
-        let useCase = GamePlayUseCase(wordsRepository: repository)
-        let navigator = GameScreenNavigator(viewController: gameScreenVC)
-        let actions = GameScreenActions(dismiss: navigator.dismiss)
-        let viewModel = GameScreenViewModel(useCase: useCase, actions: actions)
-        gameScreenVC.viewModel = viewModel
-        gameScreenVC.modalPresentationStyle = .fullScreen
+        let gameScreenVC = dependencies.makeGameScreenViewController()
         window.rootViewController?.present(gameScreenVC, animated: true, completion: nil)
     }
 }
